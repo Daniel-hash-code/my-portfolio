@@ -65,3 +65,59 @@ themeToggle.addEventListener("click", function () {
 const currentYear = document.getElementById("current-year");
 
 currentYear.textContent = new Date().getFullYear();
+
+/* =========================
+   4. SCROLL REVEAL ANIMATIONS
+========================= */
+
+// Select elements that should animate
+const revealElements = document.querySelectorAll(
+    ".hero-content, .hero-visual, .section, .skill-card, .project-card"
+);
+
+// Check whether the visitor prefers reduced motion
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+// Only activate animations if reduced motion is not preferred
+if (!prefersReducedMotion) {
+
+    // Add the reveal class to each selected element
+    revealElements.forEach(function (element, index) {
+        element.classList.add("reveal");
+
+        // Add a slight delay between elements
+        element.style.setProperty(
+            "--reveal-delay",
+            `${(index % 4) * 120}ms`
+        );
+    });
+
+    // Observe elements as they enter the viewport
+    const revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("active");
+
+                    // Stop observing once the animation has played
+                    observer.unobserve(entry.target);
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.15
+        }
+    );
+
+    // Start observing all selected elements
+    revealElements.forEach(function (element) {
+        revealObserver.observe(element);
+    });
+}
