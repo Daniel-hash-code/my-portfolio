@@ -9,34 +9,67 @@
 
     <title>Daniel Njenga | Portfolio</title>
 
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
-    <script src="JS/script.js" defer></script>
+    
 </head>
 <body>
 
     <header>
-        <nav class="navbar">
-            <a href="#home" class="logo">Daniel<span>.</span></a>
+        
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
 
-            <button class="menu-toggle" id="menu-toggle"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false">
-                ☰
+            <!-- Logo -->
+            <a href="#home" class="navbar-brand logo">
+                Daniel<span>.</span>
+            </a>
+
+            <!-- Mobile menu button -->
+            <button class="navbar-toggler menu-toggle"
+                    type="button"
+                    id="menu-toggle"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#nav-links"
+                    aria-controls="nav-links"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
 
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <!-- Navigation links -->
+            <div class="collapse navbar-collapse" id="nav-links">
+                <ul class="navbar-nav ms-auto">
 
-            <button id="theme-toggle" class="theme-toggle"
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Theme toggle -->
+            <button id="theme-toggle"
+                    class="theme-toggle"
                     aria-label="Switch color theme">
                 ☀
             </button>
-        </nav>
+
+        </div>
+    </nav>
+
     </header>
 
     <main>
@@ -96,89 +129,190 @@
             </p>
         </section>
 
-        <section id="skills" class="section">
-            <p class="section-label">WHAT I'M LEARNING</p>
-            <h2>My Skills</h2>
+        
+<section id="skills" class="section">
+    <p class="section-label">WHAT I'M LEARNING</p>
+    <h2>My Skills</h2>
 
-            <div class="skills-grid">
-                <div class="skill-card">HTML & CSS</div>
-                <div class="skill-card">JavaScript</div>
-                <div class="skill-card">C Programming</div>
-                <div class="skill-card">SQL & Databases</div>
-                <div class="skill-card">Git & GitHub</div>
-                <div class="skill-card">Cloud Computing</div>
-                <div class="skill-card">Cybersecurity</div>
+    <!-- Bootstrap responsive grid -->
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 mt-3">
+
+        <div class="col">
+            <div class="skill-card h-100 d-flex align-items-center justify-content-center">
+                HTML & CSS
             </div>
-        </section>
+        </div>
 
-        <section id="projects" class="section">
-            <p class="section-label">WHAT I'VE BEEN BUILDING</p>
-            <h2>My Projects</h2>
+        <div class="col">
+            <div class="skill-card h-100 d-flex align-items-center justify-content-center">
+                JavaScript
+            </div>
+        </div>
 
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h3>Path Finder</h3>
-                    <p>
+        <div class="col">
+            <div class="skill-card h-100 d-flex align-items-center justify-content-center">
+                C Programming
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="skill-card h-100 d-flex align-items-center justify-content-center">
+                SQL & Databases
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="skill-card h-100 d-flex align-items-center justify-content-center">
+                Git & GitHub
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="skill-card h-100 d-flex align-items-center justify-content-center">
+                Cloud Computing
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="skill-card h-100 d-flex align-items-center justify-content-center">
+                Cybersecurity
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+        
+<section id="projects" class="section">
+    <p class="section-label">WHAT I'VE BEEN BUILDING</p>
+    <h2>My Projects</h2>
+
+    <!-- Bootstrap responsive grid -->
+    <div class="row g-4 mt-3">
+
+        <!-- Path Finder -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <article class="project-card card h-100">
+                <div class="card-body d-flex flex-column">
+
+                    <h3 class="card-title">Path Finder</h3>
+
+                    <p class="card-text">
                         A website concept designed to help people explore
                         learning paths and career opportunities.
                     </p>
-                    <p class="project-tech">HTML · CSS</p>
+
+                    <p class="project-tech">
+                        HTML · CSS
+                    </p>
+
                     <a href="https://github.com/Daniel-hash-code/Path_Finder.git"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="mt-auto">
                         Explore on GitHub →
                     </a>
-                </article>
 
-                <article class="project-card">
-                    <h3>QuickNotes</h3>
-                    <p>
+                </div>
+            </article>
+        </div>
+
+        <!-- QuickNotes -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <article class="project-card card h-100">
+                <div class="card-body d-flex flex-column">
+
+                    <h3 class="card-title">QuickNotes</h3>
+
+                    <p class="card-text">
                         A web development project focused on organizing
                         notes and practising frontend development.
                     </p>
-                    <p class="project-tech">HTML · CSS · JavaScript</p>
+
+                    <p class="project-tech">
+                        HTML · CSS · JavaScript
+                    </p>
+
                     <a href="https://github.com/Daniel-hash-code/quicknotes-app.git"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="mt-auto">
                         Explore on GitHub →
                     </a>
-                </article>
 
-                <article class="project-card">
-                    <h3>Database Projects</h3>
-                    <p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Database Projects -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <article class="project-card card h-100">
+                <div class="card-body d-flex flex-column">
+
+                    <h3 class="card-title">Database Projects</h3>
+
+                    <p class="card-text">
                         Programming and database exercises that strengthen
                         my problem-solving and data management skills.
                     </p>
-                    <p class="project-tech">C · SQL · SQLite</p>
+
+                    <p class="project-tech">
+                        C · SQL · SQLite
+                    </p>
+
                     <a href="https://github.com/Daniel-hash-code/Cooperative-Assignment.git"
-                       target="_blank" rel="noopener noreferrer">
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="mt-auto">
                         Explore on GitHub →
                     </a>
-                </article>
+
+                </div>
+            </article>
+        </div>
+
+    </div>
+</section>
+
+
+        
+<section id="contact" class="section">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-9 text-center">
+
+                <p class="section-label">LET'S CONNECT</p>
+
+                <h2>Get In Touch</h2>
+
+                <p class="mx-auto mb-4">
+                    Have a project idea, an opportunity, or a reason to
+                    collaborate? I'd be happy to connect.
+                </p>
+
+                <a href="mailto:kinyanjuidaniel2457@gmail.com"
+                   class="btn btn-primary btn-lg">
+                    Send Me an Email
+                </a>
+
             </div>
-        </section>
+        </div>
 
-        <section id="contact" class="section">
-            <p class="section-label">LET'S CONNECT</p>
-            <h2>Get In Touch</h2>
+    </div>
+</section>
 
-            <p>
-                Have a project idea, an opportunity, or a reason to
-                collaborate? I'd be happy to connect.
-            </p>
-
-            <a href="mailto:kinyanjuidaniel2457@gmail.com"
-               class="btn btn-primary">
-                Send Me an Email
-            </a>
-        </section>
     </main>
 
     <footer>
         <p>
             &copy; <span id="current-year"></span> Daniel Njenga.
-            Built with HTML, CSS & JavaScript.
+            Built with HTML, CSS,  JavaScript & Bootstrap.
         </p>
     </footer>
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/script.js"></script>
 
 </body>
 </html>
